@@ -5,50 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Survey Fans Ronaldo</title>
 </head>
-
 <body>
   <div class="container">
     <h1 class="mb-4">Survey Fans Ronaldo</h1>
-    <div class="form-group">
+    <form id="surveyForm">
+      <div class="form-group">
         <label for="name">Nama</label>
         <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
+      </div>
+      <div class="form-group">
         <label for="age">Usia</label>
         <input type="number" class="form-control" id="age" name="age" required>
-    </div>
-    <div class="form-group">
+      </div>
+      <div class="form-group">
         <label for="country">Asal Negara</label>
         <input type="text" class="form-control" id="country" name="country" required>
-    </div>
-    <div class="form-group">
+      </div>
+      <div class="form-group">
         <label for="date">Tanggal</label>
         <input type="date" class="form-control" id="date" name="date" required>
-    </div>
-  
-    <div class="form-group">
-        <label for="gender">Jenis Kelamin</label>                   
-        <select class="form-control" id="gender" name="gender" required>    
+      </div>
+      <div class="form-group">
+        <label for="gender">Jenis Kelamin</label>
+        <select class="form-control" id="gender" name="gender" required>
           <option value="">Pilih...</option>
           <option value="male">Laki-laki</option>
           <option value="female">Perempuan</option>
         </select>
-    <div class="form-group">
-            <label>Siapa yang GOAT?</label><br>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="goat" id="messi" value="Messi" required>
-        <label class="form-check-label" for="messi">Messi</label>
-        <input class="form-check-input" type="radio" name="goat" id="ronaldo" value="Ronaldo" required>
-        <label class="form-check-label" for="messi">Ronaldo</label>   
-    </div>
-    <div class="form-group">
+      </div>
+      <div class="form-group">
+        <label>Siapa yang GOAT?</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="goat" id="messi" value="Messi" required>
+          <label class="form-check-label" for="messi">Messi</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="goat" id="ronaldo" value="Ronaldo" required>
+          <label class="form-check-label" for="ronaldo">Ronaldo</label>
+        </div>
+      </div>
+      <div class="form-group">
         <label for="alasan">Berikan Alasan Suka Ronaldo</label>
         <input type="text" class="form-control" id="alasan" name="alasan" required>
-    </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Kirim</button>
+      </div>
+      <button type="submit" class="btn btn-primary">Kirim</button>
     </form>
-    </div>
-    </form>
+  </div>
+  <script>
+    document.getElementById('surveyForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+     
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const date = document.getElementById('date').value;
+      const country = document.getElementById('country').value;
+      const goat = document.querySelector('input[name="goat"]:checked').value;
+      const alasan = document.getElementById('alasan').value;
+
+
+     
+    });
+  </script>
 </body>
 </html>
